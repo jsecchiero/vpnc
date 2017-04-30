@@ -7,6 +7,7 @@ RUN apt-get update -y && apt-get install -y vpnc
 # Setup vpnc service
 RUN mkdir -p /etc/service/vpnc
 COPY bin/vpnc.sh /etc/service/vpnc/run
+RUN chmod 500 /etc/service/vpnc/run
 
 # Clean up
 RUN apt-get autoremove -y \
